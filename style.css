@@ -12,14 +12,13 @@ body {
     padding: 20px;
 }
 
-/* --- HEADER RESPONSIVO (PC y TABLET) --- */
+/* --- HEADER --- */
 header {
     background: #2c3e50;
     color: white;
     padding: 1.5rem 2rem;
     border-radius: 8px;
     display: grid;
-    /* En pantallas grandes, usamos las 3 columnas para centrar el texto */
     grid-template-columns: 350px 1fr 350px; 
     align-items: center; 
     gap: 20px;
@@ -28,53 +27,26 @@ header {
 .logo-empresa {
     max-width: 350px;
     height: auto;
-    justify-self: start; /* Logo pegado a la izquierda */
+    justify-self: start;
 }
 
 .header-texto {
     text-align: center;
 }
 
-/* --- VITRINA DE PRODUCTOS (PC) --- */
-.grilla-productos {
-    display: grid;
-    /* Crea tantas columnas como quepan de mínimo 280px */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
+/* --- LISTA DE SERVICIOS (Con el espacio que pediste) --- */
+#servicios ul {
+    padding-left: 60px; /* Aquí movemos los puntitos a la derecha */
+    margin-top: 15px;
 }
 
-/* --- EL "ADAPTADOR" PARA CELULARES (Móvil) --- */
-/* Cuando la pantalla sea menor a 768px (un celular o tablet vertical) */
-@media (max-width: 768px) {
-    header {
-        /* Cambiamos de 3 columnas a 1 sola columna vertical */
-        grid-template-columns: 1fr; 
-        padding: 1rem;
-        text-align: center;
-    }
-
-    .logo-empresa {
-        justify-self: center; /* Centramos el logo en el móvil */
-        max-width: 250px;      /* Lo achicamos un poco para que no tape todo */
-        margin-bottom: 15px;
-    }
-
-    .header-texto h1 {
-        font-size: 1.8rem;    /* Texto un poco más pequeño para que no se corte */
-    }
-
-    .header-texto p {
-        font-size: 0.9rem;
-    }
-    
-    .grilla-productos {
-        /* En el celular, los productos se verán uno debajo de otro */
-        grid-template-columns: 1fr; 
-    }
+#servicios li {
+    margin-bottom: 8px;
 }
 
+/* --- TABLAS Y PRECIOS --- */
 main {
-    max-width: 800px;
+    max-width: 900px; /* Un poco más ancho para que quepa bien el texto nuevo */
     margin: 20px auto;
 }
 
@@ -90,18 +62,66 @@ h2 {
     color: #2980b9;
     border-bottom: 2px solid #eee;
     padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    margin-top: 20px;
+    color: #34495e;
+    font-size: 1.2rem;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 th, td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+}
+
+/* Estilo para el texto pequeño de "Qué incluye" */
+.detalle {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    font-style: italic;
+    display: block; /* Hace que se porte como bloque debajo del título */
+    margin-top: 4px;
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    header {
+        grid-template-columns: 1fr; 
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .logo-empresa {
+        justify-self: center;
+        max-width: 280px;
+        margin-bottom: 15px;
+    }
+
+    .header-texto h1 { font-size: 1.8rem; }
+
+    #servicios ul {
+        padding-left: 30px; /* En móvil reducimos un poco el espacio para que quepa el texto */
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
 }
 
 a {
