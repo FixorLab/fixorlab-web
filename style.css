@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* --- HEADER RESPONSIVO (PC y TABLET) --- */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    display: grid;
+    /* En pantallas grandes, usamos las 3 columnas para centrar el texto */
+    grid-template-columns: 350px 1fr 350px; 
+    align-items: center; 
+    gap: 20px;
+}
+
+.logo-empresa {
+    max-width: 350px;
+    height: auto;
+    justify-self: start; /* Logo pegado a la izquierda */
+}
+
+.header-texto {
+    text-align: center;
+}
+
+/* --- VITRINA DE PRODUCTOS (PC) --- */
+.grilla-productos {
+    display: grid;
+    /* Crea tantas columnas como quepan de mínimo 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* --- EL "ADAPTADOR" PARA CELULARES (Móvil) --- */
+/* Cuando la pantalla sea menor a 768px (un celular o tablet vertical) */
+@media (max-width: 768px) {
+    header {
+        /* Cambiamos de 3 columnas a 1 sola columna vertical */
+        grid-template-columns: 1fr; 
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .logo-empresa {
+        justify-self: center; /* Centramos el logo en el móvil */
+        max-width: 250px;      /* Lo achicamos un poco para que no tape todo */
+        margin-bottom: 15px;
+    }
+
+    .header-texto h1 {
+        font-size: 1.8rem;    /* Texto un poco más pequeño para que no se corte */
+    }
+
+    .header-texto p {
+        font-size: 0.9rem;
+    }
+    
+    .grilla-productos {
+        /* En el celular, los productos se verán uno debajo de otro */
+        grid-template-columns: 1fr; 
+    }
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+section {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #2980b9;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+a {
+    color: #e67e22; 
+    text-decoration: none;
+    font-weight: bold;
+}
